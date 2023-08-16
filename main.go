@@ -98,7 +98,7 @@ func loadSDL(path string) (map[string]*Object, error) {
 	var o *Object
 	for n := 1; s.Scan(); n++ {
 		l := strings.TrimSpace(s.Text())
-		if l == "" {
+		if l == "" || strings.HasPrefix(l, "#") {
 			continue
 		}
 		if strings.HasSuffix(l, "{") {
