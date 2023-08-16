@@ -29,6 +29,9 @@ func run(args []string) error {
 		return fmt.Errorf("dst: %w", err)
 	}
 
+	fmt.Printf("src: >>> %s\n", args[0])
+	fmt.Printf("dst: <<< %s\n", args[1])
+
 	if len(src) != len(dst) {
 		fmt.Printf("len(src) != len(dst), %d <> %d\n", len(src), len(dst))
 	} else {
