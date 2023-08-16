@@ -47,21 +47,21 @@ func printDiff(lhs, rhs *Object) {
 	}
 	fmt.Printf("[%s] name: %s ==========\n", lhs.kind, lhs.name)
 	if lhs.kind != rhs.kind {
-		fmt.Println(">>kind:", lhs.kind)
-		fmt.Println("<<kind:", rhs.kind)
+		fmt.Println("  >>kind:", lhs.kind)
+		fmt.Println("  <<kind:", rhs.kind)
 	}
 	if lhs.name != rhs.name {
-		fmt.Println(">>name:", lhs.name)
-		fmt.Println("<<name:", rhs.name)
+		fmt.Println("  >>name:", lhs.name)
+		fmt.Println("  <<name:", rhs.name)
 	}
 	for k := range lhs.item {
 		if _, ok := rhs.item[k]; !ok {
-			fmt.Println(">>item:", k)
+			fmt.Println("  >>item:", k)
 		}
 	}
 	for k := range rhs.item {
 		if _, ok := lhs.item[k]; !ok {
-			fmt.Println("<<item:", k)
+			fmt.Println("  <<item:", k)
 		}
 	}
 }
